@@ -28,18 +28,34 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(compose.foundation)
+                api(compose.animation)
+
+                implementation(compose.ui)
                 implementation(compose.runtime)
-                implementation(compose.foundation)
                 implementation(compose.material)
+                implementation(compose.material3)
+                implementation(compose.materialIconsExtended)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+
+                implementation(libs.kotlinx.dateTime)
+                implementation(libs.koin.core)
+                implementation(libs.koin.compose)
+
+                api(libs.mvvm.core)
+                api(libs.mvvm.compose)
+                api(libs.mvvm.flow)
+                api(libs.mvvm.flow.compose)
             }
         }
         val androidMain by getting {
             dependencies {
-                api("androidx.activity:activity-compose:1.6.1")
-                api("androidx.appcompat:appcompat:1.6.1")
-                api("androidx.core:core-ktx:1.9.0")
+                implementation (libs.compose.activity)
+                implementation(libs.androidx.appcompat)
+                implementation(libs.accompanist.systemuicontroller)
+
+                implementation(libs.koin.android)
             }
         }
         val iosX64Main by getting

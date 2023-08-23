@@ -10,6 +10,8 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(project(":shared"))
+                implementation(libs.compose.activity)
+                implementation("androidx.compose.foundation:foundation:1.4.3")
             }
         }
     }
