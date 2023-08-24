@@ -6,6 +6,7 @@ kotlin = "1.8.21"
 ## SDK Versions
 minSdk = "21"
 mokoVersion = "0.16.1"
+precompose = "1.5.0-rc01"
 targetSdk = "33"
 compileSdk = "33"
 
@@ -84,6 +85,7 @@ mvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "mokoVe
 mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "mokoVersion" }
 mvvm-flow = { module = "dev.icerock.moko:mvvm-flow", version.ref = "mokoVersion" }
 mvvm-flow-compose = { module = "dev.icerock.moko:mvvm-flow-compose", version.ref = "mokoVersion" }
+precompose = { module = "moe.tlaster:precompose", version.ref = "precompose" }
 roboelectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 
 sqlDelight-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
