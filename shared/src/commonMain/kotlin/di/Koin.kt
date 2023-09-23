@@ -11,6 +11,6 @@ fun appModule() = module {
     single { ActivityRepository() }
 
     viewModelDefinition { ActivityViewModel(get())}
-    viewModelDefinition { ActivityListViewModel(get())}
+    viewModelDefinition { ActivityListViewModel()}
     viewModelDefinition { ActivityDetailsViewModel(get(), get()) }
 }

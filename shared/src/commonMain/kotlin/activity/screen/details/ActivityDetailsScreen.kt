@@ -14,13 +14,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.koin.compose.rememberKoinInject
-import org.koin.core.parameter.parametersOf
 
 @Composable
 fun ActivityDetailsRoute(
-    name: String,
-    viewModel: ActivityDetailsViewModel = rememberKoinInject(parameters = { parametersOf(name) }),
+    viewModel: ActivityDetailsViewModel,
 ) {
     val state by viewModel.uiState.collectAsState()
     ActivityDetailsScreen(state)

@@ -11,15 +11,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.koin.compose.rememberKoinInject
+import org.koin.compose.koinInject
 
 @Composable
 fun ActivityListRoute(
     navigateToDetails: (String) -> Unit,
-    viewModel: ActivityListViewModel = rememberKoinInject(),
+    viewModel: ActivityListViewModel = koinInject(),
 ) {
     val state by viewModel.uiState.collectAsState()
     ActivityListScreen(state, navigateToDetails, viewModel::update)
@@ -33,13 +36,17 @@ fun ActivityListScreen(
     update: () -> Unit
 ) {
 
+    var count by rememberSaveable { mutableStateOf(0) }
+
     Scaffold {
         LazyColumn(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)) {
 
             item{
+                Text(count.toString())
                 Button(onClick = {
+                    count += 1
                     update()
                 }){
                     Text("Fecth")

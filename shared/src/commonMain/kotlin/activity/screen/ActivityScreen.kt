@@ -15,14 +15,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.koin.compose.rememberKoinInject
 import ui.activity.screen.ActivityUiState
 import ui.activity.screen.ActivityViewModel
 
 @Composable
 fun ActivityRoute(
     navigateToDetails: () -> Unit,
-    viewModel: ActivityViewModel = rememberKoinInject(),
+    viewModel: ActivityViewModel,
 ) {
     val state by viewModel.uiState.collectAsState()
     ActivityScreen(state, navigateToDetails, viewModel::updateCount)
@@ -35,6 +34,7 @@ fun ActivityScreen(
     navigateToDetails: () -> Unit,
     updateCount: () -> Unit,
 ) {
+
     Scaffold {
 
         Box(Modifier.fillMaxSize()) {
@@ -57,3 +57,4 @@ fun ActivityScreen(
         }
     }
 }
+

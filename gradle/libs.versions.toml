@@ -1,7 +1,7 @@
 [versions]
-accompanistSystemuicontroller = "0.28.0"
+accompanistSystemuicontroller = "0.30.1"
 appcompat = "1.6.1"
-kotlin = "1.8.21"
+kotlin = "1.9.0"
 
 ## SDK Versions
 minSdk = "21"
@@ -15,20 +15,20 @@ android-gradle-plugin = "7.4.2"
 ktlint-gradle = "11.4.2"
 gradle-versions = "0.47.0"
 
-compose = "1.5.0"
-composeCompiler = "1.5.1"
+compose = "1.5.1"
+composeCompiler = "1.5.3"
 
 android-desugaring = "2.0.3"
-androidx-core = "1.10.1"
+androidx-core = "1.12.0"
 androidx-test-junit = "1.1.5"
 androidx-activity-compose = "1.7.2"
-androidx-lifecycle = "2.6.1"
+androidx-lifecycle = "2.6.2"
 
 junit = "4.13.2"
 
 coroutines = "1.7.3"
 kotlinx-datetime = "0.4.0"
-ktor = "2.3.1"
+ktor = "2.3.4"
 
 robolectric = "4.10.3"
 
@@ -64,6 +64,7 @@ coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", ve
 junit = { module = "junit:junit", version.ref = "junit" }
 
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin-compose"}
